@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Home page</title>
+</head>
+<body>
+    <div class="navbar">
+        <!-- <a href="../index.html">Home</a> -->
+         <a class="active" href="userpage">User information</a>
+         <a href="fwlog">Firewall logs</a>
+         <a href="/logout" class="right">Logout</a>
+         <div class="dropdown">
+            <button class="dropbtn">Charts 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <!--<a class="active" href="fwlog">Firewall logs</a> -->
+              <a href="chart1">Chart1</a>
+              <a href="chart2">Chart2</a>
+            </div>
+          </div> 
+     </div>
+     <p><br><br></p>
+      <div>
+        <h3>User information</h3>
+        <p>Welcome <%= user%> !</p>
+      </div>
+    <!--
+      <form>
+        <input type="file" id="thefile" onchange="alertFilename()" />
+        <input type="button" onclick="alertFilename()" value="alert" />
+      </form>
+    
+      Please select a file to upload:<br />
+      <input type="file" id="fileToUpload" size="50"/>
+      <br /><br />
+      <button onclick="GetInputValue()">Get the path to the file to upload!</button>
+
+      <div id="topBar">
+        <p>Hello!</p>
+    </div>
+  -->
+  <div class="form-container">
+
+    <div>
+      Choose a Windows firewall log file to be taken to Mongo
+      <form method="POST" action="/submit-form">
+        <select name="file">
+          <% for (let i = 0; i < files.length; i++) { %>
+            <option value="<%= files[i] %>"><%= files[i] %></option>
+          <% } %>
+        </select>
+        <input type="submit" value="Submit to Mongo the chosen file" />
+      </form>
+    </div>
+
+    <div>
+        Remove all Windows firewall logs from Mongo (collection: fwlogs)?
+        <form method="POST" action="/delete-logs">
+          <select name="emptyMongo">
+              <option value="yes">Yes</option>
+          </select>
+          <input type="submit" value="Empty Mongo" />
+        </form>
+    </div>
+    
+  </div>
+
+
+     <!--<script src="../js/loadFwlogstoMongo.js"></script>-->
+     <!--<script src="../js/test.js"></script> -->
+      <div class="footer">
+          <h2>© Veli-Pekka Mäki</h2>
+      </div>
+</body>
+</html>
