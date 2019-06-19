@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Chart1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    
+</head>
+<body>
+
+    <div class="navbar">
+           <!-- no use <a href="/">Login</a> -->
+           <a href="home">User information</a>
+            <a href="fwlog">Firewall logs</a>
+           <a href="/logout" class="right">Logout</a>
+           <div class="dropdown">
+            <button class="dropbtn">Charts 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <!--<a href="fwlog">Firewall logs</a>-->
+              <a class="active" href="chart1">Chart1</a>
+              <a href="chart2">Chart2</a>
+            </div>
+          </div> 
+    </div>
+   
+    <p><br><br></p>
+    <h3>Charts -> Chart1</h3>
+    
+    <div id="chart1">
+    </div>
+    
+    <canvas id="chart1test" width="800" height="450"></canvas>
+
+    <script>
+    new Chart(document.getElementById("chart1test"), {
+    type: 'bar',
+    data: {
+      labels: ["A", "B", "C", "D", "E"],
+      datasets: [
+        {
+          label: "Test A",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2577,4267,723,799,427]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Test B'
+      }
+    }
+});
+    </script>
+
+    <script src="js/getFwlogs.js"></script>
+    <p><br><br><br><br></p>
+    <div class="footer">
+            <h2>© Veli-Pekka Mäki</h2>
+    </div>
+</body>
+</html>
