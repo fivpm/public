@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="../js/blogs.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="./news.html">News</a>
+        <a href="./contact.html">Contact Us</a>
+        <a class="active" href="./blog.html">Blog</a>
+        <a href="./about.html" class="right">About Us</a>
+    </div>
+    <div class="row">
+        <div id="blogpic" class="side"> <h1>Write some blog</h1>
+            <form action="/addpost" method="POST">
+                <P><textarea name="body"></textarea></P>
+                <input type="submit" value="Add Post" />
+            </form>
+        </div>
+        <div class="mainpages">
+            <h3>Old blogs:</h3>
+            <p id="blogid"></p>
+            <!--<p id="blogedit"></p> -->
+            <!--  <div id="blogedit"></div> -->
+            <p><br><br></p>
+        </div>
+    </div>
+    <div class="footer">
+        <h2>© Veli-Pekka Mäki</h2>
+    </div>
+</body>
+</html>

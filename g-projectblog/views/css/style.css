@@ -1,0 +1,329 @@
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row { 
+    flex-direction: column wrap;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("../fonts/NationalPark-Heavy.otf");
+  }
+
+#homepagefont h1 {
+  font-family: 'CustomFont';
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+.fa {
+  padding: 0;
+  /*font-size: 10px;*/
+  width: 50px;
+  height: 46px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0px 0px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color:white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+/* Index page image in header background*/
+.header {
+  margin-top: 70px;
+  padding: 80px; /* some padding */
+  text-align: center; /* center the text */
+  /*background: #1abc9c; /* green background */
+  color: white; /* white text color */
+  background-image: url("../images/home.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Increase the font size of the <h1> element */
+.header h1 {
+  font-size: 40px;
+}
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden; /* Hide overflow */
+  background-color: #333; /* Dark background color */
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  left: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left; /* Make sure that the links stay side-by-side */
+  display: block; /* Change the display to block, for responsive reasons (see below) */
+  color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 14px 20px; /* Add some padding */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right; /* Float a link to the right */
+}
+
+/* Change color on hover/mouse-over */
+.navbar a:hover {
+  background-color: #ddd; /* Grey background color */
+  color: black; /* Black text color */
+}
+/* Ensure proper sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Column container */
+.row { 
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 30%; /* Set the width of the sidebar */
+  background-color: white; /* Grey background color */
+  padding: 20px; /* Some padding */
+}
+
+/* Main column on the right*/
+.main { 
+  flex: 70%; /* Set the width of the main content */
+  background-color: white; /* White background color */
+  padding: 20px; /* Some padding */
+}
+
+.footer {
+  /*margin-top: 60px;*/
+  padding: 5px; /* Some padding */
+  text-align: center; /* Center text*/
+  background: lightgray; /* Grey background */
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height:70px;   /* Height of the footer */
+  /*background:#6cf;*/
+  left: 0;
+}
+/*
+.footer a.right {
+  float: right; /* Float a link to the right 
+  padding: 10px;
+}
+
+.footer h2,a {
+  display: inline;
+}
+*/
+
+a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+.active.right {
+  background-color: #4CAF50;
+  color: white;
+  float: right; /* Float a link to the right */
+}
+
+/* HOME PAGE */
+/* Slideshow container */
+/*
+.slides {display: none;}
+img {vertical-align: middle;}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text
+.slidetext {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+/* The dots/bullets/indicators
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+/* Fading animation
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+*/
+/* End of Slideshow container */
+/* END OF HOME PAGE*/
+
+
+/* BLOGS PAGE */
+.side textarea {
+  width: 100%;
+  height: auto;
+}
+.mainpages button {
+  /*makes space under Leave comment -button on Blog page*/
+  margin-bottom: 30px;
+}
+#blogpic {
+  background: url("../images/blog.jpg") center center;
+  /*position: fixed;
+  background-size: contain;*/
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  }
+
+  #blogpic h1 {
+    margin-top: 30px;
+    color: white;
+    /*background-color: #45a049;*/
+  }
+/* END OF BLOGS PAGE */
+
+/* NEWS PAGE */
+.mainpages { 
+  margin-top: 20px;
+  flex: 70%; /* Set the width of the main content */
+  /*background-color: blue; /* White background color */
+  padding: 20px; /* Some padding */
+}
+#more {display: none;}
+
+#newspic {
+background: url("../images/news.jpg") center center;
+/*position: fixed;
+background-size: contain;*/
+background-repeat: no-repeat;
+width: 100%;
+min-height: 100%;
+background-size: cover;
+}
+/* END OF NEWS PAGE */
+
+/* CONTACT FORM */
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */  
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-bottom: 110px;
+ /*
+  display: flex;
+  flex-flow: row wrap;
+*/
+}
+#contactpic {
+  background: url("../images/contact.jpg") center center;
+  /*position: fixed;
+  background-size: contain;*/
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  }
+/* END OF CONTACT FORM */
+
+/* ABOUT US */
+#aboutpic {
+  background: url("../images/about.jpg") center center;
+  /*position: fixed;
+  background-size: contain;*/
+  margin-top: 0px;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  }
+/* END OF ABOUT US */
