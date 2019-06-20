@@ -8,36 +8,7 @@
     <title>Index</title>
 </head>
 <body>
-    <!--
-    <div class="navbar">
-            <a  class="active" href="/">Login</a>
-            <a href="home">User information</a>
-            <a href="fwlog">Firewall logs</a>
-            <a href="./about.html" class="right">About Us</a>
-    </div>
-    -->
-
-    <!--
-**
-        <div class="registration-form">
-                <h1>Registration Form</h1>
-                <form action="/regis" method="POST">
-                    <input type="text" name="username" placeholder="Username" required>
-                    <input type="password" name="password" placeholder="Password" required>
-                    <input type="submit">
-                </form>
-        </div>
-		<div class="login-form">
-			<h1>Login Form</h1>
-			<form action="/auth" method="POST">
-				<input type="text" name="username" placeholder="Username" required>
-				<input type="password" name="password" placeholder="Password" required>
-				<input type="submit">
-			</form>
-		</div>
-**
-    -->
-
+ 
         <div class="registration-form">
                 <h1>Registration Form</h1>
                 <form method="POST" action="/register">
@@ -56,29 +27,6 @@
 		</div>
 
 <!--
-    <div></div>
-    <h1>Register</h1>
-    <form method="POST" action="/register">
-        <p>Email: </p>
-        <input type="text" name="email">  
-        <p>Username: </p>
-        <input type="text" name="username"> 
-        <p>Password: </p>
-        <input type="text" name="password">
-        <input type="submit" value="Register!">
-    </form>
-
-    <h1>Login</h1>
-    <form method="POST" action="/login">  
-        <p>Username: </p>
-        <input type="text" name="username"> 
-        <p>Password: </p>
-        <input type="text" name="password">
-        <input type="submit" value="Login!">
-    </form>
-    
--->
-
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const myParam = urlParams.get('error');
@@ -86,5 +34,6 @@
             document.querySelector("div").innerHTML = "Username already used!!!"
         }
     </script>
+-->
 </body>
 </html>

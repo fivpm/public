@@ -2,7 +2,8 @@
 const common = require('./charts');
 const getFwlogs = () => {
     //src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"
-    fetch("http://localhost:3000/chart2/getfwlogs")
+//    fetch("http://localhost:3000/chart2/getfwlogs")
+      fetch("http://localhost:3000/fwlog/getfwlogs")
         .then(data => data.json())
         .then(response => {
             console.log(response);
@@ -10,6 +11,7 @@ const getFwlogs = () => {
             common.actionsChart2(response);
             common.actionsChart3(response);
             common.actionsChart4(response);
+            
         });
 }
 

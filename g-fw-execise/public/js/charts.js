@@ -1,3 +1,4 @@
+//pie chart for firewall actions which values are Allow or Drop
 function actionsChart1(response) {
     /*
         for (let i = 0; i < response.data.length; i++) {
@@ -46,7 +47,7 @@ function actionsChart1(response) {
                     legend: { display: true },
                     title: {
                       display: true,
-                      text: 'Windows Firewall log Action'
+                      text: 'Windows Firewall log Actions'
                     }
               },
                     // the y-axis should start at 0
@@ -62,6 +63,7 @@ function actionsChart1(response) {
         // });
   }
   
+  //pie chart for firewall protocols which values are Udp or Tcp
   function actionsChart2(response) {
     /*
         for (let i = 0; i < response.data.length; i++) {
@@ -75,17 +77,17 @@ function actionsChart1(response) {
         //console.log(response.data);
           response.data.forEach(function(data) {
             
-            dataset.datas.push(data.Action);
+            dataset.datas.push(data.Protocol);
           });
           //Array dataset.datas will include all the occurences of words: allow and drop
           const dataArr = dataset.datas;  
-          const actions = getWordCnt(dataArr); //getWordCnt will count the amount of each individual item (allow and drop) in array
+          const protocols = getWordCnt(dataArr); //getWordCnt will count the amount of each individual item (allow and drop) in array
           //console.log(actions); //actions is a object: {allow:5, drop:4}
-          labels = Object.keys(actions); //actions object keys to labels array
+          labels = Object.keys(protocols); //actions object keys to labels array
           console.log(labels);
           let values = [];
-          labels.forEach((action) => {
-            values.push(actions[action]);
+          labels.forEach((protocol) => {
+            values.push(protocols[protocol]);
           });
           //console.log(test);
           dataset.datas = values;
@@ -98,8 +100,15 @@ function actionsChart1(response) {
                 datasets: [{
                   label: 'test',
                   data: dataset.datas,
+                  backgroundColor: [
+                    "#c45850",
+						        "#e8c3b9",
+                    "#3cba9f",
+                    "#8e5ea2",
+                    "#3e95cd"
+                  ],
                 //   backgroundColor: 'rgba(255, 99, 132, 0.2)', // make the bars translucent red
-                  backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                 // backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
                 //   borderColor: 'rgba(255, 99, 132, 1)', // make the borders of the bars opaque red
                 //   borderWidth: 1 // set the border width to 1 pixel
                 }]
@@ -110,7 +119,7 @@ function actionsChart1(response) {
                     legend: { display: true },
                     title: {
                       display: true,
-                      text: 'Windows Firewall log Action'
+                      text: 'Windows Firewall log Protocols'
                     }
               },
                     // the y-axis should start at 0
@@ -126,7 +135,7 @@ function actionsChart1(response) {
         // });
   }
   
-  
+  //pie chart for firewall destination ports which values are eg 53, 443, 137...
   function actionsChart3(response) {
     /*
         for (let i = 0; i < response.data.length; i++) {
@@ -140,17 +149,17 @@ function actionsChart1(response) {
         //console.log(response.data);
           response.data.forEach(function(data) {
             
-            dataset.datas.push(data.Action);
+            dataset.datas.push(data.DestinationPort);
           });
           //Array dataset.datas will include all the occurences of words: allow and drop
           const dataArr = dataset.datas;  
-          const actions = getWordCnt(dataArr); //getWordCnt will count the amount of each individual item (allow and drop) in array
+          const destinationports = getWordCnt(dataArr); //getWordCnt will count the amount of each individual item (allow and drop) in array
           //console.log(actions); //actions is a object: {allow:5, drop:4}
-          labels = Object.keys(actions); //actions object keys to labels array
+          labels = Object.keys(destinationports); //actions object keys to labels array
           console.log(labels);
           let values = [];
-          labels.forEach((action) => {
-            values.push(actions[action]);
+          labels.forEach((destinationport) => {
+            values.push(destinationports[destinationport]);
           });
           //console.log(test);
           dataset.datas = values;
@@ -164,7 +173,7 @@ function actionsChart1(response) {
                   label: 'test',
                   data: dataset.datas,
                 //   backgroundColor: 'rgba(255, 99, 132, 0.2)', // make the bars translucent red
-                  backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                  backgroundColor: ["#3cba9f", "#3e95cd", "#8e5ea2","#e8c3b9","#c45850"],
                 //   borderColor: 'rgba(255, 99, 132, 1)', // make the borders of the bars opaque red
                 //   borderWidth: 1 // set the border width to 1 pixel
                 }]
@@ -175,7 +184,7 @@ function actionsChart1(response) {
                     legend: { display: true },
                     title: {
                       display: true,
-                      text: 'Windows Firewall log Action'
+                      text: 'Windows Firewall log DestinationPorts'
                     }
               },
                     // the y-axis should start at 0
@@ -191,7 +200,7 @@ function actionsChart1(response) {
         // });
   }
   
-  
+  //pie chart for firewall paths which values are Receive or Send
   function actionsChart4(response) {
     /*
         for (let i = 0; i < response.data.length; i++) {
@@ -205,17 +214,17 @@ function actionsChart1(response) {
         //console.log(response.data);
           response.data.forEach(function(data) {
             
-            dataset.datas.push(data.Action);
+            dataset.datas.push(data.Path);
           });
           //Array dataset.datas will include all the occurences of words: allow and drop
           const dataArr = dataset.datas;  
-          const actions = getWordCnt(dataArr); //getWordCnt will count the amount of each individual item (allow and drop) in array
+          const paths = getWordCnt(dataArr); //getWordCnt will count the amount of each individual item (allow and drop) in array
           //console.log(actions); //actions is a object: {allow:5, drop:4}
-          labels = Object.keys(actions); //actions object keys to labels array
+          labels = Object.keys(paths); //actions object keys to labels array
           console.log(labels);
           let values = [];
-          labels.forEach((action) => {
-            values.push(actions[action]);
+          labels.forEach((path) => {
+            values.push(paths[path]);
           });
           //console.log(test);
           dataset.datas = values;
@@ -229,7 +238,7 @@ function actionsChart1(response) {
                   label: 'test',
                   data: dataset.datas,
                 //   backgroundColor: 'rgba(255, 99, 132, 0.2)', // make the bars translucent red
-                  backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+                  backgroundColor: ["#e8c3b9", "#3e95cd", "#8e5ea2","#3cba9f","#c45850"],
                 //   borderColor: 'rgba(255, 99, 132, 1)', // make the borders of the bars opaque red
                 //   borderWidth: 1 // set the border width to 1 pixel
                 }]
@@ -240,7 +249,7 @@ function actionsChart1(response) {
                     legend: { display: true },
                     title: {
                       display: true,
-                      text: 'Windows Firewall log Action'
+                      text: 'Windows Firewall log Paths'
                     }
               },
                     // the y-axis should start at 0
@@ -255,7 +264,6 @@ function actionsChart1(response) {
             });
         // });
   }
-  
   
   function getWordCnt(dataArr){
     return dataArr.reduce(function(prev,next){

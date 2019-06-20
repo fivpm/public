@@ -31,10 +31,14 @@ route.get("/", (request, response) => {
 
 //User wants to register
 route.post("/register", (request, response) => {
-    const { username, password, email } = request.body;
+    //console.log(request.body);
+    const { username, password } = request.body;
+    //console.log({username:username});
     //Make sure the user or email does NOT already exist
     //And if not, save the user (encrypting the pw as well)
-    database.collection("fwusers").findOne({ $or: [{ username: username }, { email: email }] }, (err, user) => {
+    //database.collection("fwusers").findOne({ $or: [{ username: username }, { email: email }] }, (err, user) => {
+        database.collection("fwusers").findOne( { username:username } , (err, user) => {
+        //console.log(user);
         if (user) {
             response.redirect("/?error=username");
         } else {
@@ -42,7 +46,7 @@ route.post("/register", (request, response) => {
                 if (err) throw err;
                 database.collection("fwusers").insertOne({
                     username: username,
-                    email: email,
+                   // email: email,
                     password: pwd,
                 });
                 response.redirect("/");
@@ -50,6 +54,7 @@ route.post("/register", (request, response) => {
         }
     });
 });
+
 
 //Handle login
 route.post("/login", (request, response) => {

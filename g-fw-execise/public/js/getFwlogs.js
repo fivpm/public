@@ -23,7 +23,7 @@ const getFwlogs = () => {
                 sourceip.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;'+ '<b>SrcIp:</b> ' + element.SourceIp;
                 destinationip.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;'+ '<b>DstIp:</b> ' + element.DestinationIp;
                 sourceport.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;'+ '<b>SrcPort:</b> ' + element.SourcePort;
-                destinationport.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;'+ '<b>DctPort:</b> ' + element.DestinationPort;
+                destinationport.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;'+ '<b>DstPort:</b> ' + element.DestinationPort;
                 path.innerHTML = '&nbsp;&nbsp;&nbsp;&nbsp;'+ '<b>Path:</b> ' + element.Path;
                 logs.append(time);
                 logs.append(action);
