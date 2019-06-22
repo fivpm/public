@@ -1,16 +1,15 @@
-//This will print drawings on Chart2 page
+//This will print drawings on chart2.html
 const common = require('./charts');
 const getFwlogs = () => {
-    //src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"
-//    fetch("http://localhost:3000/chart2/getfwlogs")
+
       fetch("http://localhost:3000/fwlog/getfwlogs")
         .then(data => data.json())
         .then(response => {
             console.log(response);
             common.actionsChart1(response);
-            common.actionsChart2(response);
-            common.actionsChart3(response);
-            common.actionsChart4(response);
+            common.protocolsChart2(response);
+            common.portsChart3(response);
+            common.pathsChart4(response);
             
         });
 }

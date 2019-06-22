@@ -14,7 +14,7 @@ mongo.connect(url, { useNewUrlParser: true }, (err, db) => {
     database = db.db("exdb");
 });
 
-//Basic middleware to prevent user going to /forum page if NOT logged in
+//Basic middleware to prevent user going to page if NOT logged in
 const redirectIndex = (request, response, next) => {
     if (request.session.userId) {
         next();
@@ -23,38 +23,12 @@ const redirectIndex = (request, response, next) => {
     }
 }
 
-//Send forum.html...
 route.get("/", redirectIndex, (req, resp) => {
     resp.sendFile("fwlog.html", {
         root: __dirname + "/../public/html"
     });
 });
 
-//Save forum post to db...
-/*
-route.post("/post", (req, resp) => {
-    database.collection("forumPosts").insertOne({
-        userId: req.session.userId,
-        username: req.session.username,
-        forumPost: req.body.form
-    }, (err) => {
-        resp.redirect("/forum");
-    });
-});
-*/
-/**
- * Instead of ALWAYS returning the whole list of posts,
- * you probably would want to only return the posts
- * that the client hasn't yet recieved. That's a task
- * i'm going to leave to you though ;).
- */
-/*
-route.get("/getposts", (request, response) => {
-    database.collection("forumPosts").find({}).toArray((err, arr) => {
-        response.send({ data: arr });
-    });
-});
-*/
 route.get("/getfwlogs", (request, response) => {
     database.collection("fwlogs").find({}).toArray((err, arr) => {
         response.send({ data: arr });

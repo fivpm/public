@@ -5,8 +5,8 @@ const { getDbUrl } = require("./../../db.js");
 const url = getDbUrl();
 let database;
 
-
 //**Loading firewall log file to MongoDB collection "fwlogs" */
+// req is file name located in dir /../../logs
 function loadFileToMongo(req) {
     console.log(req);
     mongo.connect(url, { useNewUrlParser: true }, (err, db) => {
@@ -28,11 +28,11 @@ function loadFileToMongo(req) {
             const myInterface = readline.createInterface({
                 input: fs.createReadStream(path.join(__dirname, '..','..','logs',req))
             });
-            let lineno = 0;
+            //let lineno = 0;
             myInterface.on('line', function (line) {
-                lineno++;
+              //  lineno++;
                 if(/^[0-9]/.test(line)){ //Row in log file will be ignored if the first char on line is other than digit 0-9
-                    let tmp = line.split(" ");
+                    let tmp = line.split(" "); //line is split to tmp array
                     //console.log(tmp.length);
                     const date = tmp[0];
                     const time = tmp[1];

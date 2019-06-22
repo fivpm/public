@@ -1,3 +1,6 @@
+//Functions on this file are called from getFwlogsChart2.js and they draw 
+// pie charts on chart2.html
+
 //pie chart for firewall actions which values are Allow or Drop
 function actionsChart1(response) {
     /*
@@ -64,7 +67,7 @@ function actionsChart1(response) {
   }
   
   //pie chart for firewall protocols which values are Udp or Tcp
-  function actionsChart2(response) {
+  function protocolsChart2(response) {
     /*
         for (let i = 0; i < response.data.length; i++) {
           console.log(response.data[i].Timestamp);
@@ -79,10 +82,10 @@ function actionsChart1(response) {
             
             dataset.datas.push(data.Protocol);
           });
-          //Array dataset.datas will include all the occurences of words: allow and drop
+          //Array dataset.datas will include all the occurences of words: udp and tcp
           const dataArr = dataset.datas;  
-          const protocols = getWordCnt(dataArr); //getWordCnt will count the amount of each individual item (allow and drop) in array
-          //console.log(actions); //actions is a object: {allow:5, drop:4}
+          const protocols = getWordCnt(dataArr); //getWordCnt will count the amount of each individual item (udp and tcp) in array
+          //console.log(actions); //protocols is a object: eg {udp:5, tcp:4}
           labels = Object.keys(protocols); //actions object keys to labels array
           console.log(labels);
           let values = [];
@@ -136,7 +139,7 @@ function actionsChart1(response) {
   }
   
   //pie chart for firewall destination ports which values are eg 53, 443, 137...
-  function actionsChart3(response) {
+  function portsChart3(response) {
     /*
         for (let i = 0; i < response.data.length; i++) {
           console.log(response.data[i].Timestamp);
@@ -151,9 +154,9 @@ function actionsChart1(response) {
             
             dataset.datas.push(data.DestinationPort);
           });
-          //Array dataset.datas will include all the occurences of words: allow and drop
+          //Array dataset.datas will include all the occurences of port numbers
           const dataArr = dataset.datas;  
-          const destinationports = getWordCnt(dataArr); //getWordCnt will count the amount of each individual item (allow and drop) in array
+          const destinationports = getWordCnt(dataArr); //getWordCnt will count the amount of each individual item
           //console.log(actions); //actions is a object: {allow:5, drop:4}
           labels = Object.keys(destinationports); //actions object keys to labels array
           console.log(labels);
@@ -201,7 +204,7 @@ function actionsChart1(response) {
   }
   
   //pie chart for firewall paths which values are Receive or Send
-  function actionsChart4(response) {
+  function pathsChart4(response) {
     /*
         for (let i = 0; i < response.data.length; i++) {
           console.log(response.data[i].Timestamp);
@@ -216,10 +219,10 @@ function actionsChart1(response) {
             
             dataset.datas.push(data.Path);
           });
-          //Array dataset.datas will include all the occurences of words: allow and drop
+          //Array dataset.datas will include all the occurences of words: receive and send
           const dataArr = dataset.datas;  
-          const paths = getWordCnt(dataArr); //getWordCnt will count the amount of each individual item (allow and drop) in array
-          //console.log(actions); //actions is a object: {allow:5, drop:4}
+          const paths = getWordCnt(dataArr); //getWordCnt will count the amount of each individual item (receive and send) in array
+          //console.log(actions); //actions is a object: eg {receive:5, send:4}
           labels = Object.keys(paths); //actions object keys to labels array
           console.log(labels);
           let values = [];
@@ -272,4 +275,4 @@ function actionsChart1(response) {
     },{});
   }
 
-module.exports = { actionsChart1,actionsChart2,actionsChart3,actionsChart4 };
+module.exports = { actionsChart1,protocolsChart2,portsChart3,pathsChart4 };

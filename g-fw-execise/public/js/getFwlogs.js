@@ -1,5 +1,5 @@
-//Get request to our server for the forum posts
-//Once recieved, put them to the DOM
+// on fwlog.html : <script src="js/getFwlogs.js"></script>
+// on routes/fwlog.js : route.get("/getfwlogs", (request, response)
 const getFwlogs = () => {
     fetch("http://localhost:3000/fwlog/getfwlogs")
         .then(data => data.json())

@@ -26,7 +26,7 @@ const redirectIndex = (request, response, next) => {
 route.get("/", redirectIndex, async (request, response) => {
     userstr = request.session.username;
     userstr = userstr.charAt(0).toUpperCase() + userstr.slice(1);
-    const directoryPath = __dirname + "/../logs";
+    const directoryPath = __dirname + "/../logs"; //all logs will be shown on userpage
     let allFiles;
     fs.readdir(directoryPath, function (err, files) {
         //handling error

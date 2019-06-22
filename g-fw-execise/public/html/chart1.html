@@ -10,7 +10,7 @@
     
 </head>
 <body>
-
+<!--Beginning of Nav bar-->
     <div class="navbar">
            <!-- no use <a href="/">Login</a> -->
            <a href="home">User information</a>
@@ -27,62 +27,31 @@
             </div>
           </div> 
     </div>
-   
+<!--End of Nav bar--> 
     <p><br><br></p>
     <h3>Charts -> Chart1</h3>
     
   
     <div class="chart1-container">
 
-      <div class="box1">
-      <!--  **<canvas id="chart2a" width="1400" height="400"></canvas> -->
-        <canvas id="chart1a"></canvas>
-      </div>
+            <div class="box1">
+            <!--  **<canvas id="chart2a" width="1400" height="400"></canvas> -->
+                <canvas id="chart1a"></canvas>
+            </div>
+      <!--
+            <div class="box2">
+              <canvas id="chart1b"></canvas>
+            </div>
 
-      <div class="box2">
-        <canvas id="chart1b"></canvas>
-      </div>
-<!--
-      <div class="box3">
-         <canvas id="chart1c"></canvas>
-      </div>
+            <div class="box3">
+              <canvas id="chart1c"></canvas>
+            </div>
 
-      <div class="box3">
-        <canvas id="chart1d"></canvas>
-      </div>
--->
+            <div class="box3">
+              <canvas id="chart1d"></canvas>
+            </div>
+      -->
     </div>
-  
-<!--
-    <div id="chart1">
-    </div>
-  -->
-<!--
-    <canvas id="chart1test" width="800" height="450"></canvas>
-
-    <script>
-    new Chart(document.getElementById("chart1test"), {
-    type: 'bar',
-    data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-      datasets: [
-        {
-          label: "Population (millions)",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          data: [2478,5267,734,784,433]
-        }
-      ]
-    },
-    options: {
-      legend: { display: false },
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      }
-    }
-});
-    </script>
--->
 
     <script src="js/charts1.js"></script>
     <!--<script src="js/bundle.js"></script> -->

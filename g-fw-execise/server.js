@@ -32,14 +32,14 @@ app.use(expressSession({
 /**
  * Define routes
  */
-app.use("/", require("./routes/index.js"));
-app.use("/home", require("./routes/home.js"));
-app.use("/fwlog", require("./routes/fwlog.js"));
-app.use("/chart1", require("./routes/chart1.js"));
-app.use("/chart2", require("./routes/chart2.js"));
+app.use("/", require("./routes/index.js")); //renders /public/html/index.html which has register and login forms
+app.use("/home", require("./routes/home.js")); //renders /views/userpage.ejs
+app.use("/fwlog", require("./routes/fwlog.js")); //renders /public/html/fwlog.html
+app.use("/chart1", require("./routes/chart1.js")); //renders /public/html/chart1.html
+app.use("/chart2", require("./routes/chart2.js")); //renders /public/html/chart2.html
 //app.use("/submit-form", require("./routes/home.js"));
 
-//Load firewall log file to Mongo
+//Load Windows firewall logs file to Mongo on /views/userpage.ejs
 app.post('/submit-form', (req, res) => {
     //console.log(req.body.file);
     file = req.body.file;
@@ -47,7 +47,7 @@ app.post('/submit-form', (req, res) => {
     res.redirect("/home")
   })
 
- //Remove all the firewall logs from Mongo
+ //Remove all the firewall logs from Mongo on /views/userpage.ejs
  app.post('/delete-logs', (req, res) => {
     //console.log(req.body.file);
     emptyMongoYes = req.body.emptyMongo;

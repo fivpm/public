@@ -3,7 +3,7 @@ const { getDbUrl } = require("./../../db.js");
 const url = getDbUrl();
 let database;
 
-//**Remove firewall logs MongoDB collection "fwlogs" */
+//**Remove all firewall logs MongoDB collection "fwlogs" */
 function removeLogs(req) {
     console.log(req);
     mongo.connect(url, { useNewUrlParser: true }, (err, db) => {
