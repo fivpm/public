@@ -1,0 +1,112 @@
+
+.wrapper {
+  
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  margin: 10px;
+}
+
+.columns {
+  display:flex; 
+  flex-direction:row; 
+  justify-content: space-around;
+  
+  
+}
+
+.amount p {
+   
+  color: #F4F4F4;
+  background-color: black;
+  
+  width: max-content;
+  float: right;
+}
+.top {
+  /*grid-area:top;*/
+  background: linear-gradient(#F4F4F4,blue);
+  text-align: center;
+}
+
+.postContainer {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.clientForm {
+  display:flex; flex-direction:column;
+  
+}
+
+.left {
+  width: 50%;
+  background: #ccc;
+  order: 1;
+  padding: 20px;
+}
+
+.right {
+  width: 50%;
+  background: #ccc;
+  order: 2;
+  padding: 20px;
+}
+
+/*
+
+.display {
+  display: flex;
+  margin-top: 60px;
+}
+
+.leftSidebar {
+  width: 320px;
+  height: 100%;
+  padding: 15px 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+*/
+
+
+/*
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+*/
