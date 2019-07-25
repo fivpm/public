@@ -107,7 +107,7 @@ let textinput = fs.readFileSync(textInputFile, function(err, data) {
         a => a
           .split(' ')
           .map(
-            b => ref[b]
+            b => ref[b].toUpperCase()
           ).join('')
       ).join(' ');
   }
