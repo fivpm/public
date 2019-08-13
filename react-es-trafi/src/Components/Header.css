@@ -1,0 +1,28 @@
+.style1 {
+    background-color: #333; /* Dark background color  */
+    position: fixed;
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    left: 0;
+    z-index: 1;
+  }
+  
+  .style2 {
+    float: left;
+  }
+  
+  .style2 a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1px 16px;
+    text-decoration: none;
+  }
+  
+  .style2 a:hover:not(.active) {
+    background-color:green;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
