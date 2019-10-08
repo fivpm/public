@@ -3,6 +3,8 @@ import { getCamera } from '../js/camselApi';
 
 const moment = require('moment');
 
+let roadArr = [];
+
 class CameraSel extends Component {
 
     constructor() {
@@ -70,8 +72,8 @@ class CameraSel extends Component {
                     Province: 
                         <select style={{  margin: "10px" }} onChange={this.provinceChanged} value={this.state.selectedProvince}>
                             {
-                            [... new Set(result.map(iresult =>   // set command shows unique values on dropdown list
-                                    (iresult.province)))].map((cam) =>
+                            [...new Set(result.map(iresult =>   // set command shows unique values on dropdown list
+                                    (iresult.province)))].sort().map((cam) =>
                                     
                                                                 <option
                                                                     value={cam}>
@@ -85,18 +87,55 @@ class CameraSel extends Component {
                         Road: 
                         <select style={{  margin: "10px" }} onChange={ (e) => this.selectionChanged(e, selectedTime)} value={selectedPresetId} >
                             {
-                            result.map((cam) => cam.presetsArr.map (obj => 
-                                    {
-                                            //console.log("GGGG: " + selectedTime)
-                                        if ( cam.province === this.state.selectedProvince){ // only selected province cameras are shown on this dropdown list
+                                
+                            result.map((cam) => {
 
-                                                return  <option
+                               /* {console.log(result)}
+                                roadArr = cam.presetsArr.map();
+                                {console.log(roadArr)}*/
+
+                          
+
+                                return cam.presetsArr.map(obj => {
+                                            //console.log("GGGG: " + obj)
+
+                                             //function sortFunction(...obj) {
+                                              //  return obj.sort();
+                                               // obj.sort(function(a, b) {
+                                                 //  return a.name > b.name;
+                                                   /*
+                                                   var x = a.name.toLowerCase();
+                                                   var y = b.name.toLowerCase();
+                                                   if (x < y) {return -1;}
+                                                   if (x > y) {return 1;}
+                                                   return 0;
+                                                   */
+                                               // }
+                                            // }
+                                            
+                                            // sortFunction();
+                                            
+
+
+                                        if ( cam.province === this.state.selectedProvince){ // only selected province cameras are shown on this dropdown list
+                                            
+                                           /*
+                                           roadArr.push(obj.name);
+                                           roadArr.sort();
+                                           {console.log(roadArr)}
+                                            */
+                                           
+                                           return  <option
                                                             value={JSON.stringify(obj)}>
+                                                            
                                                             {obj.name}
                                                         </option>
+                                        } else {
+                                            return undefined
                                         }
-                                    }
-                                ))
+                                }
+                                ).sort();
+                            })
                             }
                         </select>
                 </form>
